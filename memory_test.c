@@ -68,8 +68,10 @@ void run_test(int n_processes, int write_rate, int duration, int with_writer) {
         pids[i] = fork();
         if (pids[i] == 0) { // Child process
             if (process_args[i].is_writer) {
+                printf("Start Writer %d\n",i);
                 writer_process(&process_args[i]);
             } else {
+                printf("Start Reader %d\n",i);
                 reader_process(&process_args[i]);
             }
             exit(0);
