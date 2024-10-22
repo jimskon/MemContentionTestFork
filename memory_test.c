@@ -28,6 +28,7 @@ void writer_process(process_arg_t* args) {
     int value = 0;
     while (1) {
         atomic_store(shared_mem, value++);
+        printf(" %lld",value);
         usleep(1000000 / args->write_rate); // Sleep for the given write rate
     }
 }
