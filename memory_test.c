@@ -26,11 +26,8 @@ typedef struct {
 // Writer process function
 void writer_process(process_arg_t* args) {
     int value = 0;
-    printf("Writer Starting\n");
     while (1) {
-        printf(" A:%d\n",value);
         atomic_store(shared_mem, value++);
-        printf(" B:%d\n",value);
         usleep(1000000 / args->write_rate); // Sleep for the given write rate
     }
 }
@@ -50,7 +47,7 @@ void reader_process(process_arg_t* args) {
         sum += atomic_load(shared_mem);
         args->read_count++;
     }
-    printf("SUM %d: %lld\n", args->id, sum);
+    //printf("SUM %d: %lld\n", args->id, sum);
     exit(args->read_count); // Return the read count in the exit status
 }
 
