@@ -26,7 +26,7 @@ typedef struct {
 // Writer process function
 void writer_process(process_arg_t* args) {
     int value = 0;
-    printf("Writeer Starting\n");
+    printf("Writer Starting\n");
     while (1) {
         printf(" A:%d",value);
         atomic_store(shared_mem, value++);
