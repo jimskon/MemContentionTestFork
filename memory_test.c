@@ -123,7 +123,7 @@ int main() {
     run_test(n_processes, write_rate, duration, 1);
 
     // Run the test without writing contention
-    run_test(n_processes, write_rate, duration, 0);
+    run_test(n_processes-1, write_rate, duration, 0);
 
     // Cleanup shared memory
     shm_unlink("/shared_mem");
