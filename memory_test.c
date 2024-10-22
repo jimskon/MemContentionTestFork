@@ -20,6 +20,7 @@ typedef struct {
     int duration;
     int write_rate;
     int is_writer;
+    int fill[10000];
 } process_arg_t;
 
 // Writer process function
