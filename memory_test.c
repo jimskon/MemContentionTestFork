@@ -28,9 +28,9 @@ void writer_process(process_arg_t* args) {
     int value = 0;
     printf("Writer Starting\n");
     while (1) {
-        printf(" A:%d",value);
+        printf(" A:%d\n",value);
         atomic_store(shared_mem, value++);
-        printf(" B:%d",value);
+        printf(" B:%d\n",value);
         usleep(1000000 / args->write_rate); // Sleep for the given write rate
     }
 }
