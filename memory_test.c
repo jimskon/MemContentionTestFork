@@ -109,7 +109,7 @@ int main() {
     // Create shared memory
     int shm_fd = shm_open("/shared_mem", O_CREAT | O_RDWR, 0666);
     ftruncate(shm_fd, sizeof(atomic_int));
-    shared_mem = mmap(0, sizeof(atomic_int), PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    //shared_mem = mmap(0, sizeof(atomic_int), PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
 
     // Get user input
     printf("Enter the number of processes: ");
