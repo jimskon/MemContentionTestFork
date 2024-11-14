@@ -44,7 +44,7 @@ void reader_process(process_arg_t* args) {
         if ((end.tv_sec - start.tv_sec) >= args->duration) break;
 
         // Read from shared memory
-        sum += atomic_load(shared_mem);
+        //sum += atomic_load(shared_mem);
         args->read_count++;
     }
     //printf("SUM %d: %lld\n", args->id, sum);
