@@ -11,7 +11,7 @@
 #define BILLION 1000000000L
 
 // Shared memory (global)
-volatile atomic_int *shared_mem;
+//volatile atomic_int *shared_mem;
 
 // Process argument structure
 typedef struct {
